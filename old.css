@@ -22,3 +22,15 @@ Edit by: Hfanes
 #PlacesChevron .bookmark-item[container] .menu-iconic-icon {
   list-style-image: url("folder.ico") !important;
 }
+
+/* tabliss/tabnine change site icon */
+.tabbrowser-tab[label="New Tab"] .tab-icon-image {
+  box-sizing: content-box !important;
+  background: linear-gradient(
+    135deg,
+    rgba(145, 212, 240, 0.5),
+    rgba(142, 170, 198, 0.25)
+  ) !important;
+  border-radius: 50px !important;
+  content-visibility: hidden !important;
+}

@@ -1,0 +1,484 @@
+/* makes the icons look nicer*/
+.zen-workspace-icon {
+  filter: saturate(140%) brightness(110%) !important;
+  opacity: 1 !important;
+}
+
+.subviewbutton[tooltiptext][active="true"] .zen-workspace-icon {
+  visibility: visible;
+  filter: saturate(140%) brightness(110%) !important;
+  opacity: 1 !important;
+  width: auto !important;
+  height: auto !important;
+  background-color: transparent !important;
+  border-radius: 0;
+  transform: scale(1.4);
+}
+
+.subviewbutton[tooltiptext]:not([active="true"]):hover .zen-workspace-icon {
+  visibility: visible !important;
+  filter: saturate(140%) brightness(110%) !important;
+  transform: scale(1.2);
+  opacity: 1 !important;
+}
+
+.subviewbutton[tooltiptext]:not([active="true"]):hover
+  .zen-workspace-icon::after {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.subviewbutton::after {
+  opacity: 0;
+}
+
+#zen-workspaces-button {
+  container-name: workspaces;
+  container-type: inline-size;
+  display: block;
+  width: 100%;
+  max-height: min-content;
+  background: transparent !important;
+}
+
+@container workspaces (width < 100px) {
+  .subviewbutton[tooltiptext]:not([active="true"]):not(:hover) {
+    width: 8px !important;
+    padding: 0px;
+  }
+
+  .subviewbutton[tooltiptext]:not([active="true"]):not(:hover)
+    .zen-workspace-icon {
+    visibility: hidden;
+    position: relative;
+    padding: 0;
+    width: 5px !important;
+    height: 5px !important;
+    padding: 0px;
+  }
+
+  .subviewbutton[tooltiptext]:not([active="true"]) .zen-workspace-icon::after {
+    content: "";
+    width: 4px;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    visibility: visible !important;
+    z-index: 1;
+    padding: 0;
+  }
+}
+
+/* Make the parent container a flexbox to handle resizing */
+#zen-workspaces-button {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+/* Style for the toolbar buttons */
+#zen-workspaces-button .subviewbutton {
+  flex: 1;
+  min-width: 5px;
+  max-width: 100px;
+  height: auto;
+  padding: 4px;
+  margin: 2px;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+/* Adjust icon size relative to the button size */
+#zen-workspaces-button .subviewbutton .zen-workspace-icon {
+  transition: font-size 0.3s ease;
+}
+
+/*Url*/
+#urlbar-background {
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+
+#urlbar-container {
+  position: relative;
+}
+
+#urlbar {
+  border: none !important;
+  width: 250px !important;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  transition: width 0.3s ease;
+}
+#urlbar:focus-within {
+  width: 400px !important;
+}
+
+#urlbar:is([breakout][breakout-extend], [breakout][usertyping][focused]) {
+  #urlbar-input {
+    font-size: 16px !important;
+  }
+
+  z-index: 2;
+  position: fixed !important;
+  bottom: auto !important;
+  top: 20vh !important;
+  padding-left: 6px !important;
+  padding-right: 8px !important;
+
+  left: 18vw !important;
+  right: 18vw !important;
+  width: 64vw !important;
+
+  &:after {
+    content: "";
+    position: fixed;
+    pointer-events: none;
+
+    width: 120vw;
+    height: 120vh;
+
+    top: 0px;
+    left: 0px;
+
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+
+    z-index: -1;
+  }
+
+  #identity-box {
+    margin: auto 0;
+    height: 30px;
+    margin-right: 10px;
+  }
+
+  .urlbar-go-button {
+    margin: auto 0;
+  }
+
+  #urlbar-background {
+    background-color: rgb(13, 13, 13, 0.8) !important;
+  }
+}
+
+/*lef icon in urlbar */
+#identity-icon {
+  list-style-image: url("https://raw.githubusercontent.com/neurokitti/Arc_Zen_Theme/6da4c1ca78cc521bea1026ff024fcc8528ae6a49/icons/settings.svg") !important;
+  scale: 0.75;
+}
+
+#identity-icon-box {
+  background-color: transparent !important;
+}
+
+/*star bookmark icon 
+#star-button-box,
+#tracking-protection-icon-container,
+#identity-icon-label,
+#reader-mode-button {
+  display: None;
+} */
+
+#urlbar-input,
+#urlbar-searchmode-and-input-box-container,
+#urlbar-input-box,
+#urlbar-scheme {
+  flex-grow: 1 !important;
+}
+
+#urlbar-input {
+  font-size: 13px !important;
+  line-height: 14px !important;
+  color: white !important;
+}
+
+.urlbar-input {
+  text-align: center !important;
+}
+
+.urlbar-input {
+  /* Styles for the outer container, if needed */
+  display: inline-block; /* Ensures the container itself doesn't stretch */
+}
+
+.urlbar-input div {
+  display: inline-block;
+  width: auto;
+  white-space: nowrap;
+  padding: 5px;
+}
+
+#urlbar-background {
+  margin: 4px;
+  border-radius: 8px !important;
+}
+
+#urlbar-zoom-button {
+  /*display: None !important;*/
+}
+
+/*left tabbar pinned */
+.tabbrowser-tab[pinned] .tab-stack .tab-background {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* background color when hovering */
+.tabbrowser-tab[pinned]:hover .tab-stack .tab-background {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+}
+/* background color when selected */
+.tabbrowser-tab[pinned][selected="true"] .tab-stack .tab-background,
+.tabbrowser-tab[pinned][multiselected="true"] .tab-stack .tab-background {
+  background-color: rgba(255, 255, 255, 0.3) !important;
+}
+/* background color when hovering and selected */
+.tabbrowser-tab[pinned][selected="true"]:hover .tab-stack .tab-background,
+.tabbrowser-tab[pinned][multiselected="true"]:hover .tab-stack .tab-background {
+  background-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+:root {
+  --toolbarbutton-hover-background: rgba(255, 255, 255, 0.2) !important;
+}
+
+.tabbrowser-tab[selected="true"] .tab-stack .tab-background {
+  background-color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* Profile Icon
+#zen-profile-button-icon {
+  list-style-image: url("https://raw.githubusercontent.com/neurokitti/Arc_Zen_Theme/6da4c1ca78cc521bea1026ff024fcc8528ae6a49/icons/arc-logo.svg") !important;
+  scale: 1.1;
+}
+*/
+
+/*Extension icon button 
+#unified-extensions-button {
+  list-style-image: url("https://raw.githubusercontent.com/neurokitti/Arc_Zen_Theme/6da4c1ca78cc521bea1026ff024fcc8528ae6a49/icons/split.svg") !important;
+  scale: 0.90;
+}*/
+
+/* hides the 3 dots */
+#PanelUI-button {
+  /*display: none !important; */
+}
+
+#nav-bar-overflow-button {
+  display: none !important;
+}
+
+/* Fix for Downloads button using content */
+#downloads-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-inline-start: 3px !important;
+  padding-inline-end: 3px !important;
+  background: none !important;
+}
+
+/*
+#downloads-button::after {
+  content: url("https://raw.githubusercontent.com/neurokitti/Arc_Zen_Theme/6da4c1ca78cc521bea1026ff024fcc8528ae6a49/icons/downloads.svg") !important;
+  display: block;
+  scale: 1.08;
+  padding: 0;
+  margin-top: 2px;
+  margin-left: -19.5px;
+}
+
+#downloads-indicator-icon,
+#downloads-indicator-progress-outer,
+#downloads-indicator-start-box,
+#downloads-indicator-finish-box {
+  display: none !important;
+}
+*/
+
+/* REPLACES THE ICONS */
+/* sets the linkly Extention to the arc copy link icon */
+#pageAction-urlbar-copy-frame-url_jeffersonscher_com {
+  list-style-image: url("https://raw.githubusercontent.com/neurokitti/Arc_Zen_Theme/6da4c1ca78cc521bea1026ff024fcc8528ae6a49/icons/copy_link.svg") !important;
+  scale: 0.75;
+}
+
+/* Lef bar down sets the expand sidebar svg */
+#zen-sidepanel-button {
+  list-style-image: url("https://raw.githubusercontent.com/neurokitti/Arc_Zen_Theme/6da4c1ca78cc521bea1026ff024fcc8528ae6a49/icons/sidebar.svg") !important;
+  scale: 1;
+  margin-left: 1px !important;
+}
+
+/* ??? sets the history svg */
+#history-panelmenu {
+  list-style-image: url("https://raw.githubusercontent.com/neurokitti/Arc_Zen_Theme/6da4c1ca78cc521bea1026ff024fcc8528ae6a49/icons/archive.svg") !important;
+  scale: 0.9;
+  padding-inline-start: 3px !important;
+  height: 100 !important;
+}
+
+/* Lef bar down sets the new tabs svg */
+#new-tab-button {
+  display: none;
+}
+
+#back-button {
+  list-style-image: url("https://raw.githubusercontent.com/neurokitti/Arc_Zen_Theme/6da4c1ca78cc521bea1026ff024fcc8528ae6a49/icons/back.svg") !important;
+  scale: 0.8;
+}
+
+#forward-button {
+  list-style-image: url("https://raw.githubusercontent.com/neurokitti/Arc_Zen_Theme/6da4c1ca78cc521bea1026ff024fcc8528ae6a49/icons/next.svg") !important;
+  scale: 0.8;
+}
+
+#reload-button {
+  list-style-image: url("https://raw.githubusercontent.com/neurokitti/Arc_Zen_Theme/6da4c1ca78cc521bea1026ff024fcc8528ae6a49/icons/refresh.svg") !important;
+  scale: 0.9;
+}
+
+/* HIDES THE ICONS */
+#identity-permission-box {
+  display: none !important;
+}
+
+#titlebar-buttonbox {
+  padding: 0px !important;
+  margin: 0px !important;
+}
+
+/* top left 2 icons */
+#zen-sidebar-top-buttons {
+  height: 32px !important;
+  min-height: 32px !important;
+}
+
+/*#vertical-pinned-tabs-container {
+  padding-top: 0px !important;
+  margin-top: 0px !important;
+  display: grid !important;
+}
+*/
+
+#tabbrowser-tabbox {
+  padding-top: 0px !important;
+}
+
+:root {
+  #browser,
+  #TabsToolbar::after {
+    background-image: url("https://raw.githubusercontent.com/JLBlk/Zen-Themes/refs/heads/main/SuperGradient/Film-Grain%20Textures/dark-normal.png") !important;
+  }
+}
+
+.titlebar-button.titlebar-min {
+  list-style-image: url("https://raw.githubusercontent.com/neurokitti/Arc_Zen_Theme/6da4c1ca78cc521bea1026ff024fcc8528ae6a49/icons/minimize.svg") !important;
+  padding: 15px !important;
+  padding-left: 17px !important;
+  padding-right: 17px !important;
+  scale: 0.9;
+}
+
+.titlebar-button.titlebar-max {
+  list-style-image: url("https://raw.githubusercontent.com/neurokitti/Arc_Zen_Theme/6da4c1ca78cc521bea1026ff024fcc8528ae6a49/icons/maximize.svg") !important;
+  padding: 15px !important;
+  padding-left: 17px !important;
+  padding-right: 17px !important;
+  scale: 0.9;
+}
+
+.titlebar-button.titlebar-close {
+  list-style-image: url("https://raw.githubusercontent.com/neurokitti/Arc_Zen_Theme/6da4c1ca78cc521bea1026ff024fcc8528ae6a49/icons/close.svg") !important;
+  padding: 15px !important;
+  padding-left: 17px !important;
+  padding-right: 20px !important;
+  scale: 0.9;
+  margin-right: -2px !important;
+}
+
+.titlebar-button.titlebar-restore {
+  list-style-image: url("https://raw.githubusercontent.com/neurokitti/Arc_Zen_Theme/6da4c1ca78cc521bea1026ff024fcc8528ae6a49/icons/maximize.svg") !important;
+  padding: 10px !important;
+  padding-left: 17px !important;
+  padding-right: 17px !important;
+  scale: 1;
+}
+
+#nav-bar {
+  height: 32px !important;
+  min-height: 32px !important;
+  padding: 0 !important;
+}
+
+.tab-text,
+.tab-label {
+  color: white !important;
+}
+
+.tab-close-button,
+.close-icon {
+  color: white !important;
+}
+
+/*Edit by: Hfanes*/
+
+/*folders*/
+#PlacesToolbarItems .bookmark-item[container] > .toolbarbutton-icon {
+  list-style-image: url("./icons/folder.ico") !important;
+}
+
+/* subfolders */
+#PlacesToolbarItems .bookmark-item[container] .bookmark-item[container] {
+  list-style-image: url("./icons/folder.ico") !important;
+}
+
+#PlacesChevron .bookmark-item[container] .menu-iconic-icon {
+  list-style-image: url("./icons/folder.ico") !important;
+}
+
+/* tabliss/tabnine change site icon */
+.tabbrowser-tab[label="New Tab"] .tab-icon-image {
+  box-sizing: content-box !important;
+  background: linear-gradient(
+    135deg,
+    rgba(145, 212, 240, 0.5),
+    rgba(142, 170, 198, 0.25)
+  ) !important;
+  border-radius: 50px !important;
+  content-visibility: hidden !important;
+}
+
+@media (-moz-bool-pref: "zen.tabs.vertical") {
+  #navigator-toolbox:is(
+      #navigator-toolbox[zen-user-hover="true"][zen-has-hover],
+      #navigator-toolbox[zen-user-hover="true"]:focus-within,
+      #navigator-toolbox[zen-user-hover="true"][movingtab],
+      #navigator-toolbox[zen-user-hover="true"][flash-popup],
+      #navigator-toolbox[zen-user-hover="true"][has-popup-menu],
+      #navigator-toolbox[zen-user-hover="true"]:has(
+          [open="true"]:not(tab):not(#zen-sidepanel-button)
+        ),
+      #navigator-toolbox[zen-expanded="true"]:not([zen-user-hover="true"])
+    ) {
+    #vertical-pinned-tabs-container:has(tab:not([hidden])) {
+      margin-bottom: 12px;
+      position: relative;
+      display: grid !important;
+    }
+    #vertical-pinned-tabs-container {
+      .tabbrowser-tab {
+        .tab-label-container {
+          display: none !important;
+        }
+      }
+    }
+  }
+}
