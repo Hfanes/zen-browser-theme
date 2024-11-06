@@ -1,8 +1,8 @@
-# zen-browser-bookmarks-folder-icon
+# zen-browser-theme
 
 Theme based on https://github.com/neurokitti/Arc_Zen_Theme/tree/main
 
-Change the default bookmark folder icons in the Zen browser to custom fodler icon.
+**Not finnished**
 
 ## Final setup
 
