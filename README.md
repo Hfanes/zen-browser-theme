@@ -4,16 +4,16 @@ Theme based on https://github.com/neurokitti/Arc_Zen_Theme/tree/main
 
 ## Final setup
 
-![Final Setup](./preview_images/image.png)
+![Final Setup](./images_preview/image.png)
 
 ## Original
 
-![Original](./preview_images//original.png)
+![Original](./images_preview/original.png)
 
 ## Preview
 
-![Preview](./preview_images//before.png)
+![Preview](./images_preview/before.png)
 
 ## Example
 
-![Preview](./preview_images//preview.png)
+![Preview](./images_preview/preview.png)
