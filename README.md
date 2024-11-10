@@ -2,20 +2,18 @@
 
 Theme based on https://github.com/neurokitti/Arc_Zen_Theme/tree/main
 
-**Not finnished**
-
 ## Final setup
 
-![Final Setup](/image.png)
+![Final Setup](./preview_images/image.png)
 
 ## Original
 
-![Original](/original.png)
+![Original](./preview_images//original.png)
 
 ## Preview
 
-![Preview](/before.png)
+![Preview](./preview_images//before.png)
 
 ## Example
 
-![Preview](/preview.png)
+![Preview](./preview_images//preview.png)
